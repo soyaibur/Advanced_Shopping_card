@@ -1,0 +1,239 @@
+/*Desktop Medium Layout: 1280px. */
+@media only screen and (min-width:992px) and (max-width: 1200px){
+
+    .single-product-item {
+        height: 250px;
+    }
+    .single-product-item:nth-child(2) {
+        height: 520px;
+        width: 70%;
+    }
+    .promo-content {
+        margin-bottom: -49px;
+    }
+    .brand-images img {width: 850px;}
+    
+    .slide-text-tablecell {
+        font-size: 92px;
+        line-height: 80px;
+    }
+    .big-menu li {
+        font-size: 35px;
+    }
+
+    .right-footer {
+        margin-right: 35px;
+    }
+    
+    .left-footer {
+        margin-left: 30px;
+    }
+
+
+}
+/*Tablet Layout 768px. */
+
+@media only screen and (min-width: 768px) and (max-width: 991px){
+
+    .owl-carousel .owl-item .single-slide-item img {
+        width: 426px;
+        bottom: 0;
+    }
+
+    .slide-text-tablecell {
+        font-size: 93px;
+        line-height: 69px;
+    }
+    
+    .big-menu li {
+        font-size: 30px;
+    }
+    
+    .big-menu li a {
+        padding-top: 92px;
+    }
+    
+    .product-area {
+        padding-top: 39px;
+    }
+    .single-product-item {
+        width: 31.3333%;
+    }
+    .single-product-item.product-bg-2,
+    .single-product-item.product-bg-4,
+    .single-product-item.product-bg-9 {
+        width: 64.6666%;
+    }
+
+    .promo-bg {
+        background-color: #F8F5F5;
+        z-index: 9;
+        position: relative;
+        padding-bottom: 78px;
+    }
+    .promo-title span.year-text {
+        right: -15px;
+    }
+    .owl-carousel .owl-item .single-product-promotion img {
+        width: auto;
+        padding-top: 126px;
+    }
+    .brand-images {
+        margin-top: 25px;
+        margin-bottom: 43px;
+    }
+    .brand-images img {
+        width: 708px;
+    }
+    .social-links {
+        text-align: center;
+    }
+    input[type="submit"] {
+        display: block;
+        margin-left: 86px;
+        margin-top: 10px;
+    }
+    .right-footer {
+        margin-right: 56px;
+    }
+    .email-subscribe-form input[type=email] {
+        padding: 0px;
+        font-size: 12px;
+        text-align: center;
+        margin-right: 5px;
+    }
+
+    .footer-menu {
+        margin-left: 31px;
+    }
+.footer-area p {
+    font-size: 10px;
+    text-align: center;
+    margin-left: 31px;
+}
+}
+
+/* Small Mobile Layout: 328px. */
+
+/*@media only screen and (max-width: 767px){
+
+}
+
+/* Wide Mobile Layout: 480px. */
+@media only screen and (min-width: 480px) and (max-width:767px){
+    .header-left a {
+        padding: 5px;
+        font-size:10px;
+    }
+    .header-top-area a {
+        padding: 3px;
+    }
+    .header-right img {
+        width: 40px;
+    }
+
+    .single-slide-item img {
+        left: 20%;
+    }
+    .header-right {
+        margin-top: -37px;
+    }
+    .owl-carousel .owl-item .single-slide-item img {
+        width: 400px;
+        bottom: 0;
+    }
+    .slide-text-tablecell {
+        font-size: 50px;
+        line-height: 40px;
+    }
+   .header-top-area a {
+    font-size: 10px;
+  }
+  .search-trigger .svg-inline--fa.fa-w-16 {
+    margin-left: -5px;
+}
+.header-right img {
+     margin: 0px; 
+}
+.big-menu li a {
+    padding:18px;
+    padding-top: 80px;
+    
+}
+.big-menu li{
+    font-size:20px;
+}
+
+/*Product list*/
+.single-product-item {
+    height: 250px;
+    width: 30%;
+    background-size:cover;
+    
+}
+
+.single-product-item.product-bg-2,
+    .single-product-item.product-bg-4,
+    .single-product-item.product-bg-9 {
+        width: 60.6666%;
+        height:518px;
+    }
+
+    .product-hover> a {
+        font-size: 12px;
+        margin-left: -30px;
+        width:60px;
+       
+    }
+    span.product-color-box {
+        padding-left: 2px;
+    }
+    .product-bottom-info span.product-price {
+        font-size: 15px;
+        
+    }
+    .promo-content a.boxed-btn {
+        margin-left: 138px;
+    }
+    .brand-images {
+        margin-top: 50px;
+
+    }
+    .brand-images img {
+        width: 400px;
+    }
+    .footer-menu {
+        margin-left: 0px;
+        text-align: center;
+    }
+
+    .footer-area p {
+        text-align: center;
+        margin-left: 38px;
+    }
+    .social-links {
+        text-align: center;
+        margin-top: -60px;
+        margin-right: 163px;
+    }
+    .email-subscribe-form input[type=email] {
+        width: 186px;
+        padding: 2px;
+        font-size: 11px;
+        margin-right: 6px;
+    }
+    .email-subscribe-form input[type=submit] {
+        padding: 3px 7px 3px 7px;
+        font-size: 10px;
+    }
+    .email-subscribe-form {
+        margin-right: 129px;
+        margin-top: -13px;
+    }
+
+}
+
+
+
+
+/* Medium Layout: 1280px. */
