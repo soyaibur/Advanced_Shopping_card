@@ -1,6 +1,7 @@
 <?php
 require_once("createDb.php");
 require_once("component.php");
+session_start();
 
 //Instance of createDb class bellow.
 
@@ -8,7 +9,32 @@ $database = new createDb("productdb","producttb","localhost","root","");
 
 
 if (isset($_POST['add'])) {
-    print_r($_POST['product_id']);
+    //print_r($_POST['product_id']);
+
+    if (isset($_SESSION['cart'])) {
+         //Checking if the product already in session.
+         $array_column_id = array_column($_SESSION['cart'],'product_id');
+         print_r($array_column_id);
+         print_r($_POST['product_id']);
+         if (in_array($_POST['product_id'],$array_column_id)) {
+             echo "<script> alert('Woh! Product is already added in the cart before!')</script>";
+             header("location:index.php");
+         }
+         
+
+         
+        
+        
+    } else {
+
+        //Storing all data in an arrry so i can use letter all of them together.
+        $item_array = array('product_id'=> $_POST['product_id']);
+        // Creating new SESSION variable.
+        $_SESSION['cart'][0] = $item_array;
+        print_r($_SESSION['cart']);
+
+
+    }
 }
 
 ?>
@@ -53,9 +79,7 @@ if (isset($_POST['add'])) {
     
 
            
-           /* card("laptop.jpg","great leptop",100);
-            
-            card("laptop.jpg","great leptop",100);*/
+          
     
         
        
