@@ -9,16 +9,17 @@ $database = new createDb("productdb","producttb","localhost","root","");
 
 
 if (isset($_POST['add'])) {
-    //print_r($_POST['product_id']);
 
     if (isset($_SESSION['cart'])) {
-         //Checking if the product already in session.
+         //Check if the product already in session.
          $array_column_id = array_column($_SESSION['cart'],'product_id');
-         print_r($array_column_id);
-         print_r($_POST['product_id']);
          if (in_array($_POST['product_id'],$array_column_id)) {
-             echo "<script> alert('Woh! Product is already added in the cart before!')</script>";
-             header("location:index.php");
+             echo'<script>alert("product is already in the cart");</script>';
+             echo'<script>window.location="index.php";</script>';
+         } else {
+             $count = count($_SESSION['cart']);
+             $items = array('product_id'=> $_POST['product_id']);
+             $_SESSION['cart'][$count] = $items;
          }
          
 
@@ -28,13 +29,14 @@ if (isset($_POST['add'])) {
     } else {
 
         //Storing all data in an arrry so i can use letter all of them together.
-        $item_array = array('product_id'=> $_POST['product_id']);
+        $items= array('product_id'=> $_POST['product_id']);
         // Creating new SESSION variable.
-        $_SESSION['cart'][0] = $item_array;
-        print_r($_SESSION['cart']);
+        $_SESSION['cart'][0] = $items;
 
 
     }
+    $test = count($_SESSION['cart']);
+    print_r($test);
 }
 
 ?>
