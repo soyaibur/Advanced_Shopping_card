@@ -34,3 +34,36 @@ img{
   color:yellowgreen;
   padding: .3%;
 }
+
+/*navber styling*/
+
+.container-fluid.nav-wrapper {
+  background-color: #333;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+.container-fluid.nav-wrapper h3 {
+  padding: 10px;
+}
+
+i.fas.fa-shopping-basket {
+  padding-right: 11px;
+  color: white;
+}
+
+h3.px-5 {
+  color: white;
+}
+.header-right {
+  text-align: right;
+  color: white;
+  padding: 11px;
+  margin-top: 5px;
+  margin-right: 10%;
+}
+
+span.text-warning.bg-light {
+  border-radius: 9px;
+  padding: 0 7px;
+}
