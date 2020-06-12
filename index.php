@@ -8,6 +8,7 @@ session_start();
 $database = new createDb("productdb","producttb","localhost","root","");
 
 
+
 if (isset($_POST['add'])) {
 
     if (isset($_SESSION['cart'])) {
@@ -75,8 +76,8 @@ if (isset($_POST['add'])) {
      $result1=mysqli_query($con,$result);
      $num=mysqli_num_rows($result1);
      if ($num>0) {
-         while($rows = mysqli_fetch_assoc($result1)){
-            card($rows['product_image'],$rows['product_name'],$rows['product_price'],$rows['id']);
+          while($rows = mysqli_fetch_assoc($result1)){
+            card($rows['product_image'],$rows['product_name'],$rows['product_price'],$rows['id']); 
          }
      }
     

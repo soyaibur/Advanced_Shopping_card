@@ -36,3 +36,38 @@ function card($img,$title,$price,$product_id){
 
     echo $element;
 }
+
+
+
+
+
+function cartElement($product_img,$product_name,$prodocut_price){
+    $Element = 
+    '<form action="">
+    <div class="row single-cart-list bg-white">
+        <div class="col-md-3">
+            <img src="assets/img/'.$product_img.'" style="width: 100px;" alt="">
+
+        </div>
+        <div class="col-md-5">
+            <div class="product-dis">
+                <h3>'.$product_name.'</h3>
+                <p><small>Seller: Soyaibur</small></p>
+                <p class="price"> <strong>$'.$prodocut_price.'</strong></p>
+                <button class="btn btn-warning">Save for Later</button>
+                <button class="btn btn-danger">Remove</button>
+            </div>
+        </div>
+        <div class="col-md-4 all-button" style="margin-top:25px">
+            <button class="btn bg-light border rounded-circle"> <i class="fas fa-minus"></i></button>
+
+            <input type="text" name="product-contity" style="text-align: center;" value="1" class="from-control w-25 d-line">
+
+            <button class="btn bg-light border rounded-circle"> <i class="fas fa-plus"></i></button>
+
+        </div>
+    </div>
+</form>';
+
+    return $Element;
+}

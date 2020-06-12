@@ -1,3 +1,12 @@
+<?php
+session_start();
+require_once("createDb.php");
+require_once("component.php");
+
+
+//Creating instance for database line.
+$database = new createDb("productdb","producttb","localhost","root","");
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -28,31 +37,41 @@
                 <div class="cart-list">
                     <h3>My Cart</h3>
                     <hr>
-                    <form action="">
-                        <div class="row single-cart-list bg-white">
-                            <div class="col-md-3">
-                                <img src="assets/img/earphone.jpg" style="width: 100px;" alt="">
-        
-                            </div>
-                            <div class="col-md-5">
-                                <div class="product-dis">
-                                    <h3>Product1</h3>
-                                    <p><small>Seller: Soyaibur</small></p>
-                                    <p class="price"> <strong>$500</strong></p>
-                                    <button class="btn btn-warning">Save for Later</button>
-                                    <button class="btn btn-danger">Remove</button>
-                                </div>
-                            </div>
-                            <div class="col-md-4 all-button" style="margin-top:25px">
-                                <button class="btn bg-light border rounded-circle"> <i class="fas fa-minus"></i></button>
+                      <?php
+                       
+                         $product_id = array_column($_SESSION['cart'],'product_id');
+                         $con = $database->dblink();
+                         $result = mysqli_query($con,"SELECT * FROM producttb");
 
-                                <input type="text" name="product-contity" style="text-align: center;" value="1" class="from-control w-25 d-line">
 
-                                <button class="btn bg-light border rounded-circle"> <i class="fas fa-plus"></i></button>
-        
-                            </div>
-                        </div>
-                    </form>
+                         while ($rows = mysqli_fetch_assoc($result)) {
+                            foreach ($product_id as $key) {
+                                if ($key == $rows['id']) {
+                                    echo cartElement($rows['product_image'],$rows['product_name'],$rows['product_price']);
+                                }
+                            }
+                         }
+
+                         
+
+
+
+                           /*  while($rows = mysqli_fetch_assoc($result)){
+                                 
+                             }
+                         */
+
+                         
+                         if ($result) {
+                               echo "ysah";
+                         }
+                         
+                         
+                         
+                         
+
+                          
+                      ?>
                 </div>
     
             </div>

@@ -50,7 +50,11 @@ class createDb{
     
     
     //Method for Database connection.
-    public function dblink(){
+
+   
+   
+   
+     public function dblink(){
         $db = mysqli_connect("localhost","root","","productdb");
         if ($db) {
             return  $db; 
@@ -59,6 +63,8 @@ class createDb{
             return $error;
         }
     }
+
+
     //Method for getting product details for database.
 
 }
