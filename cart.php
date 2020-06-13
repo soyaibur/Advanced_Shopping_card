@@ -35,45 +35,60 @@ $database = new createDb("productdb","producttb","localhost","root","");
         <div class="row">
             <div class="col-md-7">
                 <div class="cart-list">
-                    <h3>My Cart</h3>
+                    <h6>My Cart</h6>
                     <hr>
                       <?php
+
+                      $total =0;
                        
-                         $product_id = array_column($_SESSION['cart'],'product_id');
-                         $con = $database->dblink();
-                         $result = mysqli_query($con,"SELECT * FROM producttb");
+                         if (isset($_SESSION['cart'])) {
+                            $product_id = array_column($_SESSION['cart'],'product_id');
+                            $con = $database->dblink();
+                            $result = mysqli_query($con,"SELECT * FROM producttb");
+   
+   
+                            while ($rows = mysqli_fetch_assoc($result)) {
+                               foreach ($product_id as $key) {
+                                   if ($key == $rows['id']) {
+                                       echo cartElement($rows['product_image'],$rows['product_name'],$rows['product_price']);
+                                       $total = $total + (int)$rows['product_price'];
+                                       
 
-
-                         while ($rows = mysqli_fetch_assoc($result)) {
-                            foreach ($product_id as $key) {
-                                if ($key == $rows['id']) {
-                                    echo cartElement($rows['product_image'],$rows['product_name'],$rows['product_price']);
-                                }
-                            }
-                         }
-
-                         
-
-
-
-                           /*  while($rows = mysqli_fetch_assoc($result)){
-                                 
-                             }
-                         */
-
-                         
-                         if ($result) {
-                               echo "ysah";
-                         }
-                         
-                         
-                         
-                         
-
-                          
+                                   }
+                               }
+                            } 
+                         }  else{
+                             echo "<h2></h2>";
+                         }                       
                       ?>
                 </div>
     
+            </div>
+            <div class="col-md-5" > 
+               <div class="price-ditails bg-white my-3" style="margin-left: 10px; margin-top:20px;">
+                  <h6>PRICE DETAILS</h6>      
+                  <hr>
+                  <div class="col-md-6">
+                    <?php
+                       if (isset($_SESSION['cart'])) {
+                           $count = count($_SESSION['cart']);
+                           echo '<h6>Price( ' .$count . ' Items)</h6>';
+                       } else {
+                           echo '<h6> Price(0 items)</6>';
+                       }
+                    ?>
+                    <h6>Delivery Charge</h6>
+                    <hr>
+                    <h6>Amount Payble</h6>
+                  </div>         
+                  <div class="col-md-6">
+                    <h6>
+                      <?php
+                        echo "Total Price: ".$total;
+                      ?>
+                    </h6>
+                  </div>         
+               </div>
             </div>
         </div>
     </div>

@@ -9,7 +9,7 @@
         </div>
         <div class="col-md-6">
             <div class="header-right">
-                <i class="fa fa-shopping-cart"></i>
+               <a href="http://localhost/das/AdvacedShoppingCart/cart.php"><i class="fa fa-shopping-cart"></i></a>
                 <span>Cart</span>
                 <?php
                   if (isset($_SESSION['cart'])) {
